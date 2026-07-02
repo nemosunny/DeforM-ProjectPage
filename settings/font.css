@@ -1,0 +1,26 @@
+/* outfit-regular - latin */
+@font-face {
+  font-family: 'Outfit';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('./outfit-v15-latin-regular.woff2') format('woff2');
+}
+
+/* raleway-regular - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 400;
+  font-display: block;
+  src: url('./raleway-v37-latin-regular.woff2') format('woff2');
+}
+
+/* raleway-600 - latin */
+@font-face {
+  font-family: 'Raleway';
+  font-style: normal;
+  font-weight: 600;
+  font-display: block;
+  src: url('./raleway-v37-latin-600.woff2') format('woff2');
+}

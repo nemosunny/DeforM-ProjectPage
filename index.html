@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html class="fontawesome-i2svg-active fontawesome-i2svg-complete"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="description" content="DeforM: Reasoning-Guided Physics-Aware Video Generation via Spatial-Temporal Masking">
+  <meta name="keywords" content="DeforM">
+<!--  <meta name="viewport" content="width=device-width, initial-scale=2">-->
+  <meta name="viewport" content="width=device-width">
+  <title>DeforM: Reasoning-Guided Physics-Aware Video Generation via Spatial-Temporal Masking</title>
+
+  <style type="text/css">svg:not(:root).svg-inline--fa{overflow:visible}.svg-inline--fa{display:inline-block;font-size:inherit;height:1em;overflow:visible;vertical-align:-.125em}.svg-inline--fa.fa-lg{vertical-align:-.225em}.svg-inline--fa.fa-w-1{width:.0625em}.svg-inline--fa.fa-w-2{width:.125em}.svg-inline--fa.fa-w-3{width:.1875em}.svg-inline--fa.fa-w-4{width:.25em}.svg-inline--fa.fa-w-5{width:.3125em}.svg-inline--fa.fa-w-6{width:.375em}.svg-inline--fa.fa-w-7{width:.4375em}.svg-inline--fa.fa-w-8{width:.5em}.svg-inline--fa.fa-w-9{width:.5625em}.svg-inline--fa.fa-w-10{width:.625em}.svg-inline--fa.fa-w-11{width:.6875em}.svg-inline--fa.fa-w-12{width:.75em}.svg-inline--fa.fa-w-13{width:.8125em}.svg-inline--fa.fa-w-14{width:.875em}.svg-inline--fa.fa-w-15{width:.9375em}.svg-inline--fa.fa-w-16{width:1em}.svg-inline--fa.fa-w-17{width:1.0625em}.svg-inline--fa.fa-w-18{width:1.125em}.svg-inline--fa.fa-w-19{width:1.1875em}.svg-inline--fa.fa-w-20{width:1.25em}.svg-inline--fa.fa-pull-left{margin-right:.3em;width:auto}.svg-inline--fa.fa-pull-right{margin-left:.3em;width:auto}.svg-inline--fa.fa-border{height:1.5em}.svg-inline--fa.fa-li{width:2em}.svg-inline--fa.fa-fw{width:1.25em}.fa-layers svg.svg-inline--fa{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.fa-layers{display:inline-block;height:1em;position:relative;text-align:center;vertical-align:-.125em;width:1em}.fa-layers svg.svg-inline--fa{-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter,.fa-layers-text{display:inline-block;position:absolute;text-align:center}.fa-layers-text{left:50%;top:50%;-webkit-transform:translate(-50%,-50%);transform:translate(-50%,-50%);-webkit-transform-origin:center center;transform-origin:center center}.fa-layers-counter{background-color:#ff253a;border-radius:1em;-webkit-box-sizing:border-box;box-sizing:border-box;color:#fff;height:1.5em;line-height:1;max-width:5em;min-width:1.5em;overflow:hidden;padding:.25em;right:0;text-overflow:ellipsis;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-bottom-right{bottom:0;right:0;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom right;transform-origin:bottom right}.fa-layers-bottom-left{bottom:0;left:0;right:auto;top:auto;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:bottom left;transform-origin:bottom left}.fa-layers-top-right{right:0;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top right;transform-origin:top right}.fa-layers-top-left{left:0;right:auto;top:0;-webkit-transform:scale(.25);transform:scale(.25);-webkit-transform-origin:top left;transform-origin:top left}.fa-lg{font-size:1.3333333333em;line-height:.75em;vertical-align:-.0667em}.fa-xs{font-size:.75em}.fa-sm{font-size:.875em}.fa-1x{font-size:1em}.fa-2x{font-size:2em}.fa-3x{font-size:3em}.fa-4x{font-size:4em}.fa-5x{font-size:5em}.fa-6x{font-size:6em}.fa-7x{font-size:7em}.fa-8x{font-size:8em}.fa-9x{font-size:9em}.fa-10x{font-size:10em}.fa-fw{text-align:center;width:1.25em}.fa-ul{list-style-type:none;margin-left:2.5em;padding-left:0}.fa-ul>li{position:relative}.fa-li{left:-2em;position:absolute;text-align:center;width:2em;line-height:inherit}.fa-border{border:solid .08em #eee;border-radius:.1em;padding:.2em .25em .15em}.fa-pull-left{float:left}.fa-pull-right{float:right}.fa.fa-pull-left,.fab.fa-pull-left,.fal.fa-pull-left,.far.fa-pull-left,.fas.fa-pull-left{margin-right:.3em}.fa.fa-pull-right,.fab.fa-pull-right,.fal.fa-pull-right,.far.fa-pull-right,.fas.fa-pull-right{margin-left:.3em}.fa-spin{-webkit-animation:fa-spin 2s infinite linear;animation:fa-spin 2s infinite linear}.fa-pulse{-webkit-animation:fa-spin 1s infinite steps(8);animation:fa-spin 1s infinite steps(8)}@-webkit-keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}@keyframes fa-spin{0%{-webkit-transform:rotate(0);transform:rotate(0)}100%{-webkit-transform:rotate(360deg);transform:rotate(360deg)}}.fa-rotate-90{-webkit-transform:rotate(90deg);transform:rotate(90deg)}.fa-rotate-180{-webkit-transform:rotate(180deg);transform:rotate(180deg)}.fa-rotate-270{-webkit-transform:rotate(270deg);transform:rotate(270deg)}.fa-flip-horizontal{-webkit-transform:scale(-1,1);transform:scale(-1,1)}.fa-flip-vertical{-webkit-transform:scale(1,-1);transform:scale(1,-1)}.fa-flip-both,.fa-flip-horizontal.fa-flip-vertical{-webkit-transform:scale(-1,-1);transform:scale(-1,-1)}:root .fa-flip-both,:root .fa-flip-horizontal,:root .fa-flip-vertical,:root .fa-rotate-180,:root .fa-rotate-270,:root .fa-rotate-90{-webkit-filter:none;filter:none}.fa-stack{display:inline-block;height:2em;position:relative;width:2.5em}.fa-stack-1x,.fa-stack-2x{bottom:0;left:0;margin:auto;position:absolute;right:0;top:0}.svg-inline--fa.fa-stack-1x{height:1em;width:1.25em}.svg-inline--fa.fa-stack-2x{height:2em;width:2.5em}.fa-inverse{color:#fff}.sr-only{border:0;clip:rect(0,0,0,0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px}.sr-only-focusable:active,.sr-only-focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto}.svg-inline--fa .fa-primary{fill:var(--fa-primary-color,currentColor);opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa .fa-secondary{fill:var(--fa-secondary-color,currentColor);opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-primary{opacity:.4;opacity:var(--fa-secondary-opacity,.4)}.svg-inline--fa.fa-swap-opacity .fa-secondary{opacity:1;opacity:var(--fa-primary-opacity,1)}.svg-inline--fa mask .fa-primary,.svg-inline--fa mask .fa-secondary{fill:#000}.fad.fa-inverse{color:#fff}</style><link href="./settings/css" rel="stylesheet">
+
+  <link rel="stylesheet" href="./settings/bulma.min.css">
+  <link rel="stylesheet" href="./settings/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./settings/bulma-slider.min.css">
+  <link rel="stylesheet" href="./settings/fontawesome.all.min.css">
+  <link rel="stylesheet" href="./settings/academicons.min.css">
+  <link rel="stylesheet" href="./settings/index.css">
+  <link rel="stylesheet" href="./settings/fonts.css">
+
+  <script src="./settings/jquery.min.js.download"></script>
+  <script defer="" src="./settings/fontawesome.all.min.js.download"></script>
+  <script src="./settings/bulma-carousel.min.js.download"></script>
+  <script src="./settings/bulma-slider.min.js.download"></script>
+  <script src="./settings/index.js.download"></script>
+<style>
+  body {
+    max-width: 2400px;
+    margin: 0 auto;
+  }
+</style>
+
+<style>
+  .rainbow-word {
+    background: linear-gradient(135deg, #ADD8E6, #8FBC8F, #ACE1AF);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    animation: rainbow-slide 5s linear infinite;
+  }
+
+  @keyframes rainbow-slide {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 100% 50%; }
+  }
+</style>
+
+<style type="text/css">@-webkit-keyframes xm-upbit {
+  from {
+    -webkit-transform: translate3d(0, 30px, 0);
+    opacity: 0.3;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@keyframes xm-upbit {
+  from {
+    transform: translate3d(0, 30px, 0);
+    opacity: 0.3;
+  }
+  to {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
+@-webkit-keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes loader {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+xm-select {
+  background-color: #FFF;
+  position: relative;
+  border: 1px solid #E6E6E6;
+  border-radius: 2px;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+}
+xm-select * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  user-select: none;
+  -ms-user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+xm-select:hover,
+xm-select:focus {
+  border-color: #C0C4CC;
+}
+xm-select > .xm-tips {
+  color: #999999;
+  padding: 0 10px;
+  position: absolute;
+  display: flex;
+  height: 100%;
+  align-items: center;
+}
+xm-select > .xm-icon {
+  display: inline-block;
+  overflow: hidden;
+  position: absolute;
+  width: 0;
+  height: 0;
+  right: 10px;
+  top: 50%;
+  margin-top: -3px;
+  cursor: pointer;
+  border: 6px dashed transparent;
+  border-top-color: #C2C2C2;
+  border-top-style: solid;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+xm-select > .xm-icon-expand {
+  margin-top: -9px;
+  transform: rotate(180deg);
+}
+xm-select > .xm-label.single-row {
+  position: absolute;
+  top: 0;
+  bottom: 0px;
+  left: 0px;
+  right: 30px;
+  overflow: auto hidden;
+}
+xm-select > .xm-label.single-row .scroll {
+  overflow-y: hidden;
+}
+xm-select > .xm-label.single-row .label-content {
+  flex-wrap: nowrap;
+  white-space: nowrap;
+}
+xm-select > .xm-label.auto-row .label-content {
+  flex-wrap: wrap;
+  padding-right: 30px !important;
+}
+xm-select > .xm-label.auto-row .xm-label-block > span {
+  white-space: unset;
+  height: 100%;
+}
+xm-select > .xm-label .scroll .label-content {
+  display: flex;
+  padding: 3px 10px;
+}
+xm-select > .xm-label .xm-label-block {
+  display: flex;
+  position: relative;
+  padding: 0px 5px;
+  margin: 2px 5px 2px 0;
+  border-radius: 3px;
+  align-items: baseline;
+  color: #FFF;
+}
+xm-select > .xm-label .xm-label-block > span {
+  display: flex;
+  color: #FFF;
+  white-space: nowrap;
+}
+xm-select > .xm-label .xm-label-block > i {
+  color: #FFF;
+  margin-left: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  display: flex;
+}
+xm-select > .xm-label .xm-label-block.disabled {
+  background-color: #C2C2C2 !important;
+  cursor: no-drop !important;
+}
+xm-select > .xm-label .xm-label-block.disabled > i {
+  cursor: no-drop !important;
+}
+xm-select > .xm-body {
+  position: absolute;
+  left: 0;
+  top: 42px;
+  padding: 5px 0;
+  z-index: 999;
+  width: 100%;
+  min-width: fit-content;
+  border: 1px solid #E6E6E6;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  animation-name: xm-upbit;
+  animation-duration: 0.3s;
+  animation-fill-mode: both;
+}
+xm-select > .xm-body .scroll-body {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+xm-select > .xm-body .scroll-body::-webkit-scrollbar {
+  width: 8px;
+}
+xm-select > .xm-body .scroll-body::-webkit-scrollbar-track {
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  border-radius: 2em;
+  background-color: #FFF;
+}
+xm-select > .xm-body .scroll-body::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 2em;
+  -moz-border-radius: 2em;
+  -ms-border-radius: 2em;
+  border-radius: 2em;
+  background-color: #C2C2C2;
+}
+xm-select > .xm-body.up {
+  top: auto;
+  bottom: 42px;
+}
+xm-select > .xm-body.relative {
+  position: relative;
+  display: block !important;
+  top: 0;
+  box-shadow: none;
+  border: none;
+  animation-name: none;
+  animation-duration: 0;
+  min-width: 100%;
+}
+xm-select > .xm-body .xm-group {
+  cursor: default;
+}
+xm-select > .xm-body .xm-group-item {
+  display: inline-block;
+  cursor: pointer;
+  padding: 0 10px;
+  color: #999;
+  font-size: 12px;
+}
+xm-select > .xm-body .xm-option {
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0 10px;
+  cursor: pointer;
+}
+xm-select > .xm-body .xm-option-icon {
+  color: transparent;
+  display: flex;
+  border: 1px solid #E6E6E6;
+  border-radius: 3px;
+  justify-content: center;
+  align-items: center;
+}
+xm-select > .xm-body .xm-option-icon.xm-custom-icon {
+  color: unset;
+  border: unset;
+}
+xm-select > .xm-body .xm-option-icon-hidden {
+  margin-right: -10px;
+}
+xm-select > .xm-body .xm-option-icon.xm-icon-danx {
+  border-radius: 100%;
+}
+xm-select > .xm-body .xm-option-content {
+  display: flex;
+  position: relative;
+  padding-left: 15px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  ;
+  width: calc(100% - 20px);
+}
+xm-select > .xm-body .xm-option.hide-icon .xm-option-content {
+  padding-left: 0;
+}
+xm-select > .xm-body .xm-option.selected.hide-icon .xm-option-content {
+  color: #FFF !important;
+}
+xm-select > .xm-body .xm-option .loader {
+  width: 0.8em;
+  height: 0.8em;
+  margin-right: 6px;
+  color: #C2C2C2;
+}
+xm-select > .xm-body .xm-select-empty {
+  text-align: center;
+  color: #999;
+}
+xm-select > .xm-body .disabled {
+  cursor: no-drop;
+}
+xm-select > .xm-body .disabled:hover {
+  background-color: #FFF;
+}
+xm-select > .xm-body .disabled .xm-option-icon {
+  border-color: #C2C2C2 !important;
+}
+xm-select > .xm-body .disabled .xm-option-content {
+  color: #C2C2C2 !important;
+}
+xm-select > .xm-body .disabled.selected > .xm-option-icon {
+  color: #C2C2C2 !important;
+}
+xm-select > .xm-body .xm-search {
+  background-color: #FFF !important;
+  position: relative;
+  padding: 0 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+xm-select > .xm-body .xm-search > i {
+  position: absolute;
+  /* color: ; */
+}
+xm-select > .xm-body .xm-search-input {
+  border: none;
+  border-bottom: 1px solid #E6E6E6;
+  padding-left: 27px;
+  cursor: text;
+}
+xm-select > .xm-body .xm-paging {
+  padding: 0 10px;
+  display: flex;
+  margin-top: 5px;
+}
+xm-select > .xm-body .xm-paging > span:first-child {
+  border-radius: 2px 0 0 2px;
+}
+xm-select > .xm-body .xm-paging > span:last-child {
+  border-radius: 0 2px 2px 0;
+}
+xm-select > .xm-body .xm-paging > span {
+  display: flex;
+  flex: auto;
+  justify-content: center;
+  vertical-align: middle;
+  margin: 0 -1px 0 0;
+  background-color: #fff;
+  color: #333;
+  font-size: 12px;
+  border: 1px solid #e2e2e2;
+  flex-wrap: nowrap;
+  width: 100%;
+  overflow: hidden;
+  min-width: 50px;
+}
+xm-select > .xm-body .xm-toolbar {
+  padding: 0 10px;
+  display: flex;
+  margin: -3px 0;
+  cursor: default;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag {
+  cursor: pointer;
+  display: flex;
+  margin-right: 20px;
+  /* color: ; */
+  align-items: baseline;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag:hover {
+  opacity: 0.8;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag:active {
+  opacity: 1;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag > i {
+  margin-right: 2px;
+  font-size: 14px;
+}
+xm-select > .xm-body .xm-toolbar .toolbar-tag:last-child {
+  margin-right: 0;
+}
+xm-select > .xm-body .xm-body-custom {
+  line-height: initial;
+  cursor: default;
+}
+xm-select > .xm-body .xm-body-custom * {
+  box-sizing: initial;
+}
+xm-select > .xm-body .xm-tree {
+  position: relative;
+}
+xm-select > .xm-body .xm-tree-icon {
+  display: inline-block;
+  margin-right: 3px;
+  cursor: pointer;
+  border: 6px dashed transparent;
+  border-left-color: #C2C2C2;
+  border-left-style: solid;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+  z-index: 2;
+  visibility: hidden;
+}
+xm-select > .xm-body .xm-tree-icon.expand {
+  margin-top: 3px;
+  margin-right: 5px;
+  margin-left: -2px;
+  transform: rotate(90deg);
+}
+xm-select > .xm-body .xm-tree-icon.xm-visible {
+  visibility: visible;
+}
+xm-select > .xm-body .xm-tree .left-line {
+  position: absolute;
+  left: 13px;
+  width: 0;
+  z-index: 1;
+  border-left: 1px dotted #c0c4cc !important;
+}
+xm-select > .xm-body .xm-tree .top-line {
+  position: absolute;
+  left: 13px;
+  height: 0;
+  z-index: 1;
+  border-top: 1px dotted #c0c4cc !important;
+}
+xm-select > .xm-body .xm-tree .xm-tree-icon + .top-line {
+  margin-left: 1px;
+}
+xm-select > .xm-body .scroll-body > .xm-tree > .xm-option > .top-line,
+xm-select > .xm-body .scroll-body > .xm-option > .top-line {
+  width: 0 !important;
+}
+xm-select > .xm-body .xm-cascader-box {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 5px 0;
+  border: 1px solid #E6E6E6;
+  background-color: #fff;
+  border-radius: 2px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.12);
+  margin: -1px;
+}
+xm-select > .xm-body .xm-cascader-box::before {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-right-color: #E6E6E6;
+  top: 10px;
+  left: -12px;
+}
+xm-select > .xm-body .xm-cascader-box::after {
+  content: ' ';
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 6px solid transparent;
+  border-right-color: #fff;
+  top: 10px;
+  left: -11px;
+}
+xm-select > .xm-body .xm-cascader-scroll {
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+xm-select > .xm-body.cascader {
+  width: unset;
+  min-width: unset;
+}
+xm-select > .xm-body.cascader .xm-option-content {
+  padding-left: 8px;
+}
+xm-select > .xm-body.cascader .disabled .xm-right-arrow {
+  color: #C2C2C2 !important;
+}
+xm-select > .xm-body.cascader .hide-icon.disabled .xm-right-arrow {
+  color: #999 !important;
+}
+xm-select .xm-input {
+  cursor: pointer;
+  border-radius: 2px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #E6E6E6;
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #FFF;
+  line-height: 1.3;
+  padding-left: 10px;
+  outline: 0;
+  user-select: text;
+  -ms-user-select: text;
+  -moz-user-select: text;
+  -webkit-user-select: text;
+}
+xm-select .dis {
+  display: none;
+}
+xm-select .loading {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+xm-select .loader {
+  border: 0.2em dotted currentcolor;
+  border-radius: 50%;
+  -webkit-animation: 1s loader linear infinite;
+  animation: 1s loader linear infinite;
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  color: inherit;
+  vertical-align: middle;
+  pointer-events: none;
+}
+xm-select .xm-select-default {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: none;
+  visibility: hidden;
+}
+xm-select .xm-select-disabled {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  cursor: no-drop;
+  z-index: 2;
+  opacity: 0.3;
+  background-color: #FFF;
+}
+xm-select .item--divided {
+  border-top: 1px solid #ebeef5;
+  width: calc(100% - 20px);
+  cursor: initial;
+}
+xm-select .xm-right-arrow {
+  position: absolute;
+  /* color: ; */
+  right: 5px;
+  top: -1px;
+  font-weight: 700;
+  transform: scale(0.6, 1);
+}
+xm-select .xm-right-arrow::after {
+  content: '>';
+}
+xm-select[size='large'] {
+  min-height: 40px;
+  line-height: 40px;
+}
+xm-select[size='large'] .xm-input {
+  height: 40px;
+}
+xm-select[size='large'] .xm-label .scroll .label-content {
+  line-height: 34px;
+}
+xm-select[size='large'] .xm-label .xm-label-block {
+  height: 30px;
+  line-height: 30px;
+}
+xm-select[size='large'] .xm-body .xm-option .xm-option-icon {
+  height: 20px;
+  width: 20px;
+  font-size: 20px;
+}
+xm-select[size='large'] .xm-paging > span {
+  height: 34px;
+  line-height: 34px;
+}
+xm-select[size='large'] .xm-tree .left-line {
+  height: 100%;
+  bottom: 20px;
+}
+xm-select[size='large'] .xm-tree .left-line-group {
+  height: calc(100% - 40px);
+}
+xm-select[size='large'] .xm-tree .xm-tree-icon.xm-hidden + .top-line {
+  top: 19px;
+}
+xm-select[size='large'] .item--divided {
+  margin: 10px;
+}
+xm-select {
+  min-height: 36px;
+  line-height: 36px;
+}
+xm-select .xm-input {
+  height: 36px;
+}
+xm-select .xm-label .scroll .label-content {
+  line-height: 30px;
+}
+xm-select .xm-label .xm-label-block {
+  height: 26px;
+  line-height: 26px;
+}
+xm-select .xm-body .xm-option .xm-option-icon {
+  height: 18px;
+  width: 18px;
+  font-size: 18px;
+}
+xm-select .xm-paging > span {
+  height: 30px;
+  line-height: 30px;
+}
+xm-select .xm-tree .left-line {
+  height: 100%;
+  bottom: 18px;
+}
+xm-select .xm-tree .left-line-group {
+  height: calc(100% - 36px);
+}
+xm-select .xm-tree .xm-tree-icon.xm-hidden + .top-line {
+  top: 17px;
+}
+xm-select .item--divided {
+  margin: 9px;
+}
+xm-select[size='small'] {
+  min-height: 32px;
+  line-height: 32px;
+}
+xm-select[size='small'] .xm-input {
+  height: 32px;
+}
+xm-select[size='small'] .xm-label .scroll .label-content {
+  line-height: 26px;
+}
+xm-select[size='small'] .xm-label .xm-label-block {
+  height: 22px;
+  line-height: 22px;
+}
+xm-select[size='small'] .xm-body .xm-option .xm-option-icon {
+  height: 16px;
+  width: 16px;
+  font-size: 16px;
+}
+xm-select[size='small'] .xm-paging > span {
+  height: 26px;
+  line-height: 26px;
+}
+xm-select[size='small'] .xm-tree .left-line {
+  height: 100%;
+  bottom: 16px;
+}
+xm-select[size='small'] .xm-tree .left-line-group {
+  height: calc(100% - 32px);
+}
+xm-select[size='small'] .xm-tree .xm-tree-icon.xm-hidden + .top-line {
+  top: 15px;
+}
+xm-select[size='small'] .item--divided {
+  margin: 8px;
+}
+xm-select[size='mini'] {
+  min-height: 28px;
+  line-height: 28px;
+}
+xm-select[size='mini'] .xm-input {
+  height: 28px;
+}
+xm-select[size='mini'] .xm-label .scroll .label-content {
+  line-height: 22px;
+}
+xm-select[size='mini'] .xm-label .xm-label-block {
+  height: 18px;
+  line-height: 18px;
+}
+xm-select[size='mini'] .xm-body .xm-option .xm-option-icon {
+  height: 14px;
+  width: 14px;
+  font-size: 14px;
+}
+xm-select[size='mini'] .xm-paging > span {
+  height: 22px;
+  line-height: 22px;
+}
+xm-select[size='mini'] .xm-tree .left-line {
+  height: 100%;
+  bottom: 14px;
+}
+xm-select[size='mini'] .xm-tree .left-line-group {
+  height: calc(100% - 28px);
+}
+xm-select[size='mini'] .xm-tree .xm-tree-icon.xm-hidden + .top-line {
+  top: 13px;
+}
+xm-select[size='mini'] .item--divided {
+  margin: 7px;
+}
+.layui-form-pane xm-select {
+  margin: -1px -1px -1px 0;
+}
+
+</style></head>
+
+
+
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+<!--    <div class="container is-max-desktop">-->
+      <div class="container is-fullhd">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title" style="font-family: 'Raleway', sans-serif; font-weight: 600;"><span class="rainbow-word">DeforM:</span> Reasoning-Guided Physics-Aware Video Generation via Spatial-Temporal Masking</h1>
+          <div class="is-size-5 publication-authors">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="card">
+    <h2><span class="rainbow-word">TL;DR</span></h2>
+    <p>
+      We propose <b><i>DeforM</i></b>, a reasoning-guided image-to-video framework that generates <b>realistic deformation dynamics</b> by localizing physics-critical regions through VLM-guided reasoning. Our method offers both a training-free strategy for mechanism analysis and a powerful training-based generator, significantly enhancing physical consistency and visual quality in deformation scenarios.
+    </p>
+  </div>
+</section>
+<div style="height: 40px;"></div>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <center>
+    <h2 class="title is-3">Teaser Video</h2>
+        <video width="1040" height="600" preload="auto" controls><source src="static/teaser/teaser_video_compressed.mp4" type="video/mp4"></video> 
+         <!-- poster="static/teaser.jpg"  -->
+        <div class="content" style="font-family: Geneva">
+            Teaser Video
+        </div>
+    </center>
+  </div>
+  <div style="text-align: center;">
+    <img src="static/teaser/Method.png" alt="Figure"  style="max-width: 70%; height: auto; width: 1500px;">
+  </div>
+  <div class="content" style="font-family: Geneva; text-align: center;"">
+    Overview
+  </div>
+  <div style="height: 40px; text-align: center;"></div>
+</section>
+
+
+<section class="hero is-light is-small">
+  <div class="hero-body">
+    <div class="columns is-centered has-text-centered">
+    <div class="container is-max-width">
+    
+      <h2 class="title is-3">🎥 DeforM-Injection Results</h2>
+      <div class="container">
+        <div id="results-carousel" class="carousel results-carousel"> 
+          
+          <div>
+            <div class="item item-steve">
+              <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/deform_video/DeforM_1.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="content" style="font-family: Arial; font-style: italic">
+              A colorful cylindrical sponge being gradually <b>flattened</b> by a hydraulic press.
+            </div>
+            <div class="item item-steve">
+              <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/deform_video/DeforM_3.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="content" style="font-family: Arial; font-style: italic">
+              A chocolate vanilla ice cream is <b>melting</b>.
+            </div>
+          </div>
+  
+          <div>
+            <div class="item item-steve">
+              <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/deform_video/DeforM_2.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="content" style="font-family: Arial; font-style: italic">
+              A stick of butter <b>melting</b> rapidly in a black pan over heat, with a pool of oil forming around its edges.
+            </div>
+            <div class="item item-steve">
+              <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/deform_video/DeforM_4.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="content" style="font-family: Arial; font-style: italic">
+              A person is <b>squeezing</b> an orange with their hand, and juice is flowing out.
+            </div>
+          </div>
+  
+          <div>
+            <div class="item item-steve">
+              <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/deform_video/DeforM_5.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="content" style="font-family: Arial; font-style: italic">
+              A circular slicer <b>segments</b> a block of cheese into eight uniform triangular pieces.
+            </div>
+            <div class="item item-steve">
+              <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/deform_video/DeforM_6.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="content" style="font-family: Arial; font-style: italic">
+              A transparent gel embedded with colored beads is being continuously <b>stretched</b>.
+            </div>
+          </div>
+  
+          <div>
+            <div class="item item-steve">
+              <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/deform_video/DeforM_8.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="content" style="font-family: Arial; font-style: italic">
+              A car wheel moving forward over a brick, <b>crushing</b> a plastic pumpkin toy until it shatters into pieces. 
+            </div>
+            <div class="item item-steve">
+              <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+                <source src="./static/deform_video/DeforM_7.mp4" type="video/mp4">
+              </video>
+            </div>
+            <div class="content" style="font-family: Arial; font-style: italic">
+              A carrot-shaped sponge is being <b>sliced</b> into strips with a knife.
+            </div>
+          </div>
+  
+        </div>
+      </div>
+      <div style="height: 25px;"></div>
+
+    <h2 class="title is-3">🎬 DeforM-Free Results</h2>
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel"> 
+        <div>
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/DeforM_Free_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            A single scoop of blue ice cream on a clean white plate <b>melts</b> gradually, with vibrant blue liquid pooling around its base.
+          </div>
+        </div>
+        <div>
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/DeforM_Free_2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            A blue and green sponge is crushed by a hydraulic press, gradually <b>flattening</b> under the immense pressure.
+          </div> 
+        </div>
+        <div>
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/DeforM_Free_3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            A row of multi-colored crayons is heated and <b>melts</b> gradually, with vibrant liquid wax dripping and flowing down the edges.
+          </div>
+        </div>
+        <div>
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/DeforM_Free_4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            A white plastic sponge is continuously <b>crushed and squeezed</b> by a heavy hydraulic press.
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="height: 25px;"></div>
+
+    </div> 
+    </div> 
+  </div> 
+</section>
+
+
+
+<section class="section">
+  <div class="container is-fullhd">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Video generation models achieve high visual quality but often struggle to generate physics-aware videos. 
+            Unlike rigid-body motion, which can be described by explicit trajectories or formulas, complex deformation dynamics remain challenging to synthesize. 
+            We observe that a lack of physical reasoning for localizing dynamic areas allows irrelevant regions to dilute the model's attention and leads to generation failure. 
+            In this paper, we propose DeforM, a reasoning-guided image-to-video generation framework that directs the model's focus toward physics-critical regions. 
+            To reason and localize these critical regions, we introduce a VLM-guided physical reasoning module, DeforM-Reason, to identify target objects and generate spatial-temporal masks. 
+            For physical guidance, we develop two alternative strategies: DeforM-Free for training-free mechanism analysis, and DeforM-Injection as a powerful training-based generator. 
+            Experimental results demonstrate that DeforM improves the realism of generated deformation scenarios, outperforming baseline models in both visual quality and physical consistency.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="hero-body">
+    <center>
+    <h2 class="title is-3">Metric</h2>
+    </center>
+  </div>
+  <div style="text-align: center;">
+    <img src="static/teaser/Metric.png" alt="Figure"  style="max-width: 70%; height: auto; width: 1400px;">
+  </div>
+  <div class="content" style="font-family: Geneva; text-align: center;"">
+    Metric
+  </div>
+  <div style="height: 40px; text-align: center;"></div>
+</section>
+
+<section class="hero comparison">
+  <div class="hero-body">
+    <center>
+      <h2 class="title is-3"> Qualitative Comparisons</h2>
+      <div style="height: 20px; text-align: center;"></div>
+    </center>
+    
+    <div class="box">
+      <h4 class="title is-5">Scene 1</h4>
+      <p style="margin-bottom: 15px; font-family: Geneva;">
+        Two transparent glass cups filled with red and white ice cubes respectively. The ice <b>melts</b> gradually, with more liquid filling the glasses.
+      </p>
+      
+      <div class="columns is-multiline is-mobile">
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>Ours</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene1/ours.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>HunyuanVideo</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene1/hunyuan.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>CogVideoX1.5-I2V</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene1/cogvideox.mp4" type="video/mp4">
+          </video>
+        </div>
+      
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>Wan2.2-I2V-14B</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene1/wan14b.mp4" type="video/mp4">
+          </video>
+        </div>
+      
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>MAGI-1</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene1/magi.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div> <div class="box">
+      <h4 class="title is-5">Scene 2</h4>
+      <p style="margin-bottom: 15px; font-family: Geneva;">
+        A car wheel moving forward over a brick, <b>crushing</b> a plastic pumpkin toy until it shatters into pieces.
+      </p>
+      
+      <div class="columns is-multiline is-mobile">
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>Ours</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene2/ours.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>HunyuanVideo</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene2/hunyuan.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>CogVideoX1.5-I2V</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene2/cogvideox.mp4" type="video/mp4">
+          </video>
+        </div>
+      
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>Wan2.2-I2V-14B</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene2/wan14b.mp4" type="video/mp4">
+          </video>
+        </div>
+      
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>MAGI-1</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene2/magi.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div> <div class="box">
+      <h4 class="title is-5">Scene 3</h4>
+      <p style="margin-bottom: 15px; font-family: Geneva;">
+        Two blue wax blocks in a copper spoon are heated and <b>melt</b> rapidly, turning into a shimmering blue liquid pool within the spoon.
+      </p>
+      
+      <div class="columns is-multiline is-mobile">
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>Ours</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene3/ours.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>HunyuanVideo</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene3/hunyuan.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>CogVideoX1.5-I2V</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene3/cogvideox.mp4" type="video/mp4">
+          </video>
+        </div>
+      
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>Wan2.2-I2V-14B</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene3/wan14b.mp4" type="video/mp4">
+          </video>
+        </div>
+      
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>MAGI-1</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene3/magi.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div> <div class="box">
+      <h4 class="title is-5">Scene 4 </h4>
+      <p style="margin-bottom: 15px; font-family: Geneva;">
+        A yellow-and-white mesh rubber ball is gradually <b>flattened</b> under the compression of a yellow-and-black hydraulic press.
+      </p>
+      
+      <div class="columns is-multiline is-mobile">
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>Ours</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene4/ours.mp4" type="video/mp4">
+          </video>
+        </div>
+
+         <div class="column is-one-sixth has-text-centered">
+          <p><b>HunyuanVideo</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene4/hunyuan.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>CogVideoX1.5-I2V</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene4/cogvideox.mp4" type="video/mp4">
+          </video>
+        </div>
+      
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>Wan2.2-I2V-14B</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene4/wan14b.mp4" type="video/mp4">
+          </video>
+        </div>
+      
+        <div class="column is-one-sixth has-text-centered">
+          <p><b>MAGI-1</b></p>
+          <video controls autoplay muted playsinline loop style="width: 100%; height: auto; border-radius: 6px;">
+            <source src="./static/compare_video/scene4/magi.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div> </div>
+</section>
+
+<div style="height: 100px;"></div> 
+<section class="hero is-light is-small">
+  <div class="hero-body" style="background-color: #ffffff" >
+    <div class="columns is-centered has-text-centered">
+    <div class="container is-max-width">
+
+    <h2 class="title is-3">More Results</h2>
+    
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel"> 
+        
+        <div>
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_1.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            Ice cubes in a transparent glass <b>melt</b> rapidly until they completely disappear, with the water gradually increasing.
+          </div>
+          
+          <div style="height: 20px;"></div>
+
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_2.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            A human hand <b>stretching</b> a colored silicone material, large elastic deformation.
+          </div>
+        </div>
+
+        <div>
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_3.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            A man is <b>inflating</b> a balloon using a gas tank, and the balloon is rapidly expanding.
+          </div>
+          
+          <div style="height: 20px;"></div>
+
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_4.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            A small, irregularly shaped piece of butter <b>melts</b> in a black frying pan.
+          </div>
+        </div>
+
+        <div>
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_5.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            Snow on the trees is <b>melting</b> rapidly under the bright sunlight with water dripping from green pine needles.
+          </div>
+          
+          <div style="height: 20px;"></div>
+
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_6.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            A person pokes yellow modeling clay with two fingers and then grasps it, leading to continuous <b>deformation</b>.
+          </div>
+        </div>
+
+        <div>
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_7.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            A silver lock is gradually <b>crushed</b> under the pressure of a hydraulic press.
+          </div>
+          
+          <div style="height: 20px;"></div>
+
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_8.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            A red and black rubber tire is being <b>compressed and deformed</b> by a hydraulic press.
+          </div>
+        </div>
+
+        <div>
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_9.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            Ice cubes in a black dry pot are <b>melting</b> rapidly as they are heated.
+          </div>
+          
+          <div style="height: 20px;"></div>
+
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_10.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            An empty soda can is being <b>crushed</b> by a hydraulic press.
+          </div>
+        </div>
+
+        <div>
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_11.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            A person is continuously <b>kneading</b> dough, which gradually deforms under the kneading motion.
+          </div>
+          
+          <div style="height: 20px;"></div>
+
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_12.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            Pink and blue sponges are placed on a table and a person <b>slices</b> the blue sponge into thin strips using a knife.
+          </div>
+        </div>
+
+        <div>
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_13.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            Light blue wax blocks in a white container are <b>melting</b> slowly, with the wax gradually turning into blue liquid.
+          </div>
+          
+          <div style="height: 20px;"></div>
+
+          <div class="item item-steve">
+            <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+              <source src="./static/deform_video/More_Results_14.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="content" style="font-family: Arial; font-style: italic">
+            A man is <b>flattening</b> a piece of dough with a rolling pin.
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is for ECCV 2026 submission review purposes only. All content is anonymized.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+ <script>
+var videos = document.getElementsByClassName("clickplay");
+for (var i = 0; i < videos.length; i++) {
+  videos[i].addEventListener("click", function() {
+    this.play();
+  });
+  videos[i].addEventListener("ended", function() {
+    this.pause();
+    this.currentTime = 0;
+  });
+}
+</script> 
+  
